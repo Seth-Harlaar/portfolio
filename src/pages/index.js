@@ -7,6 +7,8 @@ import Footer from '../components/Footer';
 import ExperienceSection from '../components/Experience'
 import OtherSection from '../components/Other'
 import SkillsSection from '../components/Skills';
+import { ThemeProvider } from 'styled-components';
+import {dogWaterTheme, goodTheme} from './theme.js'
 
 
 const Home = () => {
@@ -18,13 +20,15 @@ const Home = () => {
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle}/>
-      <HeroSection />
-      <ExperienceSection />
-      <OtherSection/>
-      <SkillsSection/>
-      <Footer />
+      <ThemeProvider theme={goodTheme}>
+        <Sidebar isOpen={isOpen} toggle={toggle}/>
+        <Navbar toggle={toggle}/>
+        <HeroSection />
+        <ExperienceSection />
+        <OtherSection/>
+        <SkillsSection/>
+        <Footer />
+      </ThemeProvider>
     </>
   )
 }

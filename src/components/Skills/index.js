@@ -7,11 +7,45 @@ import  {
   SkillColumn,
   SkillCard,
   SkillCardTitleContainer,
-  SkillCardPrev,
-  SkillCardFull,
+  SkillCardText,
   SkillCardImg,
-  SkillCardTitle
+  SkillCardTitle,
+  SkillCardImgWrapper,
+  SkillCardTitleWrapper,
+  SkillCardArrow,
+  SkillCardTextShort,
+  SkillCardTextLong
 } from './SkillsElements.js'
+
+import { skillData } from './Data.js';
+
+// for skill cards
+const SkillCardFcn = ({tog, col, data}) => {
+  return (
+    <SkillCard onClick={tog} small={col}>
+      <SkillCardTitleContainer>
+        
+        <SkillCardImgWrapper>
+          <SkillCardImg src={data.img}></SkillCardImg>
+        </SkillCardImgWrapper>
+
+        <SkillCardTitleWrapper>
+          <SkillCardTitle>{data.title}</SkillCardTitle>
+        </SkillCardTitleWrapper>
+
+      </SkillCardTitleContainer>
+        <SkillCardText>
+          <SkillCardTextShort small={col}>{data.shortDesc}</SkillCardTextShort>
+          <SkillCardTextLong small={col}>{data.longDesc}</SkillCardTextLong>
+        </SkillCardText>
+        
+
+      <SkillCardArrow small={col}>
+        ^
+      </SkillCardArrow>
+    </SkillCard>
+  )
+}
 
 
 
@@ -39,105 +73,25 @@ const SkillsSection = () => {
         <SkillsTitle>skills</SkillsTitle>
         <SkillsColumnContainer>
 
-
+          {/* Column 1 */}
           <SkillColumn>
-            <SkillCard onClick={toggleCol1} small={col1}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 1 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {col1 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
+            <SkillCardFcn tog={toggleCol1} col={col1} data={skillData.skills[0]}></SkillCardFcn>
+            <SkillCardFcn tog={toggleCol1} col={!col1} data={skillData.skills[1]}></SkillCardFcn>
+          </SkillColumn>
 
-              {!col1 && 
-                <SkillCardFull> full desc</SkillCardFull>
-              }
-            </SkillCard>
-
-            <SkillCard onClick={toggleCol1} small={!col1}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 2 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {!col1 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
-
-              {col1 && 
-                <SkillCardFull>full desc</SkillCardFull>
-              }
-            </SkillCard>
-
+          {/* Column 2 */}
+          <SkillColumn>
+            <SkillCardFcn tog={toggleCol2} col={col2} data={skillData.skills[2]}></SkillCardFcn>
+            <SkillCardFcn tog={toggleCol2} col={!col2} data={skillData.skills[3]}></SkillCardFcn>
           </SkillColumn>
 
 
-          {/* Col2 */}
+          {/* Column 3 */}
           <SkillColumn>
-
-            <SkillCard onClick={toggleCol2} small={col2}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 1 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {col2 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
-
-              {!col2 && 
-                <SkillCardFull> full desc</SkillCardFull>
-              }
-            </SkillCard>
-
-            <SkillCard onClick={toggleCol2} small={!col2}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 2 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {!col2 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
-
-              {col2 && 
-                <SkillCardFull>full desc</SkillCardFull>
-              }
-            </SkillCard>
-
+            <SkillCardFcn tog={toggleCol3} col={col3} data={skillData.skills[4]}></SkillCardFcn>
+            <SkillCardFcn tog={toggleCol3} col={!col3} data={skillData.skills[5]}></SkillCardFcn>
           </SkillColumn>
 
-
-          {/* col3 */}
-          <SkillColumn>
-
-            <SkillCard onClick={toggleCol3} small={col3}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 1 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {col3 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
-
-              {!col3 && 
-                <SkillCardFull> full desc</SkillCardFull>
-              }
-            </SkillCard>
-
-            <SkillCard onClick={toggleCol3} small={!col3}>
-              <SkillCardTitleContainer>
-                <SkillCardImg></SkillCardImg>
-                <SkillCardTitle>Skill 2 Text</SkillCardTitle>
-              </SkillCardTitleContainer>
-              {!col3 && 
-                <SkillCardPrev>small desc</SkillCardPrev>
-              }
-
-              {col3 && 
-                <SkillCardFull>full desc</SkillCardFull>
-              }
-            </SkillCard>
-
-          </SkillColumn>
         </SkillsColumnContainer>
       </SkillContainer>
     </>
