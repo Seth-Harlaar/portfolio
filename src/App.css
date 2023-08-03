@@ -20,3 +20,15 @@
   --dark-text: #ADB5BD;
   --barely-visible: #2C3136;
 }
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #05080F;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+  padding: 30px 70px;
+}

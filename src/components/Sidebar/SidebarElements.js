@@ -1,22 +1,174 @@
 import styled from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
 import { Link as LinkR } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa';
 
-export const SidebarContainer = styled.aside`
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background: #0D0D0D;
-  display: grid;
-  align-items: center;
-  top: 0;
-  left: 0;
-  transition: 0.3s ease-in-out;
-  opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
-  top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+
+// * * * * * * * * * * * *
+// * * *    Main     * * * 
+// * * * * * * * * * * * *
+export const SidebarContainer = styled.div`
+  position: relative;
+  padding: 0 30px;
+  background-color: #0C1424;
+  width: 300px;
+  color: #E5E5E5;
 `
+
+
+
+
+
+// * * * * * * * * * * * *
+// * * Profile Section * *
+// * * * * * * * * * * * *
+
+export const ProfileCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+  text-align: center;
+`
+
+
+export const ProfilePicContainer = styled.div`
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 50px;
+  outline: 1.5px solid #FCA311;
+  outline-offset: 4px;
+`
+
+export const ProfilePic = styled.img`
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+`
+
+export const ProfileName = styled.h1`
+  padding: 20px 0 10px 0;
+  font-size: 14px;
+`
+
+export const ProfileTitle = styled.h1`
+  font-size: 13px;
+  color: #FCA311;
+`
+
+export const ProfileLocation = styled.h1`
+  padding-top: 10px;
+  font-size: 12px;
+  opacity: 70%;
+`
+
+
+// * * * * * * * * * * * *
+// * * Contact Section * *
+// * * * * * * * * * * * *
+
+export const ContactContainer = styled.div`
+  padding: 30px 0;
+`
+
+export const ContactTitle = styled.h1`
+  font-size: 15px;
+  padding-bottom: 13px;
+`
+
+export const ContactsListContainer = styled.div`
+  display: flex;
+`
+export const ContactsList = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`
+
+export const ContactItem = styled.div`
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  padding: 0 5px 8px 5px;
+  color: #B6B6B6;
+  
+  transition: 150ms;
+  &:hover {
+    color: #FCA311;
+    cursor: pointer;
+  }
+`
+
+// * * * * * * * * * * * *
+// * * Contact Section * *
+// * * * * * * * * * * * *
+export const SkillsSectionContainer = styled.div`
+  padding: 30px 0;
+`
+
+export const SkillsTitle = styled.h1`
+  font-size: 15px;
+  padding-bottom: 3px;
+`
+
+export const SubjectTitle = styled.h1`
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 5px;
+`
+
+export const DashedDivider = styled.div`
+  border-bottom: 1px dashed white;
+  opacity: 50%;
+`
+
+export const SubjectCard = styled.div`
+  padding: 13px 0;
+
+  transition: 275ms;
+  &:hover {
+    transform: scale(1.1);
+  }
+`
+
+export const SubjectDecscription = styled.div`
+  margin-left: 19px;
+  font-size: 12px;
+  color: #B6B6B6;
+`
+
+
+
+
+// * * * * * * * * * * * *
+// * * *   Resume    * * *
+// * * * * * * * * * * * *
+
+export const ResumeDownloadContainer = styled.div`
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  transition: 150ms;
+  &:hover {
+    cursor: pointer;
+    color: #FCA311;
+  }
+`
+
+export const ResumeDownloadPhrase = styled.h1`
+  font-size: 12px;
+`
+
+
+// * * * * * * * * * * * *
+// * * *  Old Stuff  * * *
+// * * * * * * * * * * * *
+
 
 export const CloseIcon = styled(FaTimes)`
   color: #fff

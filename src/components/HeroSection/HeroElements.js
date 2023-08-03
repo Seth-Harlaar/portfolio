@@ -28,6 +28,7 @@ export const HeroPicture = styled.img`
 
 export const HeroText = styled.div`
   flex-grow: 1;
+  padding-left: 80px;
 `
 
 export const HeroH1 = styled.h1`
@@ -64,7 +65,6 @@ const shiftBackground = keyframes`
 `
 
 export const HeroButton = styled(LinkS)`
-
   position: relative;
   top: 25vh;
   right: 20vh;
