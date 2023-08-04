@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar';
 import HeroSection from '../HeroSection';
 import Footer from '../Footer';
 import Reviews from '../Reviews'
+import ProjectSection from '../ProjectSection';
 
 // theme
 import { ThemeProvider } from 'styled-components';
@@ -24,7 +25,8 @@ const Layout = () => {
           <div style={{width:'calc(100% - 300px)', overflowY:'auto', height:'100%', paddingLeft:'0px'}}>
             <HeroSection />
             <Reviews/>
-            <Footer />
+            <ProjectSection/>
+            <Footer/>
           </div>
         </Splitter>
       </ThemeProvider>
