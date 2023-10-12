@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 
+export const ReviewTitle = styled.h1`
+  font-size: 19px;
+  color: #E5E5E5;
+  padding-bottom: 13px;
+`
+
+export const ReviewSectionContainer = styled.div`
+  padding: 0 30px 30px 30px;
+`
 
 export const ReviewsContainer = styled.div`
   display: flex;
   gap: 30px;
-  padding: 30px;
   color: #E5E5E5;
 `
 
@@ -12,7 +20,7 @@ export const ReviewCard = styled.div`
   flex: 1;
   position: relative;
   padding: 30px;
-  background-color: #14213D;
+  background-color: #0e182b;
 `
 
 export const ReviewContent = styled.div`
@@ -40,14 +48,12 @@ export const ReviewDescription = styled.p`
 `
 
 export const ReviewRatingContainer = styled.div`
-  background-color: #0C1424;
-
   position: absolute;
   top: 25px;
   right: 25px;
-
+  background-color: #0C1424;
+  // box-shadow: 2px 2px 5px (0,0,0);
   padding: 5px 8px;
   border-radius: 20px;
-
 `
 

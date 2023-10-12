@@ -4,6 +4,7 @@ import React from 'react';
 import Sidebar from '../Sidebar';
 import HeroSection from '../HeroSection';
 import Footer from '../Footer';
+import Skills from '../Skills';
 import Reviews from '../Reviews'
 import ProjectSection from '../ProjectSection';
 
@@ -24,8 +25,9 @@ const Layout = () => {
 
           <div style={{width:'calc(100% - 300px)', overflowY:'auto', height:'100%', paddingLeft:'0px'}}>
             <HeroSection />
-            <Reviews/>
+            <Skills></Skills>
             <ProjectSection/>
+            <Reviews/>
             <Footer/>
           </div>
         </Splitter>

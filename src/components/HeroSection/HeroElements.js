@@ -1,15 +1,36 @@
-import styled from 'styled-components'
-import {keyframes} from 'styled-components'
+import styled from 'styled-components';
+import {keyframes} from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
 
+import BackgroundImage from '../../images/background/abstract_dotted.avif';
+
+export const HeroPaddingContainer = styled.div`
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 30px;
+
+  background: #0e182b;
+
+  &:after {
+    content: "";
+    background-image: url(${BackgroundImage});
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.05;
+  }
+`
+
 export const HeroContainer = styled.div`
-  background: ${props => props.theme.background};
+  padding: 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 5vh 50px 5vh 50px;
-  height: 100vh;
   overflow: hidden;
+  opacity: 1;
 `
 
 export const HeroPictureContainer = styled.div`
@@ -35,19 +56,21 @@ export const HeroH1 = styled.h1`
   margin: 20px 0 10px 0;
   text-transform: uppercase;
   color: ${props => props.theme.highlight};
-  font-size: 60px;
+  font-size: 40px;
 `
 export const HeroH2 = styled.h1`
   font-weight: normal;
   text-transform: uppercase;
   color: ${props => props.theme.light};
-  font-size: 20px;
+  font-size: 15px;
 `
 export const HeroH3 = styled.h1`
+  text-align: justify;
   font-weight: normal;
-  text-transform: uppercase;
-  color: ${props => props.theme.light};
-  font-size: 40px;
+  color: #B6B6B6;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
 `
 
 

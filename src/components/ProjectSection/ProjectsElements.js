@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 
 export const ProjectSectionBackground = styled.div`
-  padding: 30px;
+  padding: 0 30px 30px 30px;
   `
   
 export const ProjectSectionContainer = styled.div`
   padding: 30px;
-  background-color: #14213D;
+  background-color: #0e182b;
 `
 
 export const ProjectSectionTitle = styled.h1`
@@ -29,9 +29,34 @@ export const PictureIconContainer = styled.div`
 
 export const PictureContainer = styled.div`
   flex: 1;
+  height: 550px;
   outline: 2px solid #FCA311;
   margin-right: 20px;
+  padding: 10px;
 `
+
+export const PictureMenuContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`
+
+export const PictureLeft = styled.div`
+  
+  color: white;
+
+  &:hover {
+    color: green;
+  }
+`
+
+export const PictureRight = styled.div`
+  color: white;
+  &:hover {
+    color: green;
+    cursor: pointer;
+  }
+`
+
 
 export const ProjectPicture = styled.img`
   width: 100%;
@@ -54,6 +79,7 @@ export const IconGroup = styled.div`
 
 export const IconContainer = styled.div`
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -63,13 +89,15 @@ export const IconContainer = styled.div`
 `
 
 export const IconDescription = styled.h1`
-  font-size: 20px;
+  font-size: 12px;
 `
 
 
 export const ProjectDescription = styled.p`
+  height: 50px;
   width: 70%;
+  margin-left: 20px;
   text-align: justify;
-  font-size: 12px;
+  font-size: 13px;
   color: #B6B6B6;
 `
