@@ -30,17 +30,19 @@ export const customHomepageInfo = {
     {'title': 'Tailwind CSS', 'name': SiTailwindcss },
     {'title': 'Node.js', 'name': FaNodeJs },
   ],
+  'link': 'https://browser-host.github.io/homepage-clock/',
 }
 
 export const fancyNavInfo = {
   'title': 'Fancy Navigation App',
   'pictures': navPics,
-  'description': 'This project was really small and quick just to show I know how to use Tailwind CSS',
+  'description': 'This was a small project I setup to practice using Tailwind CSS to style websites. I found an interesting navigation menu I liked and decided to replicate it.',
   'icons': [
     {'title': 'React.js', 'name': DiReact },
     {'title': 'HTML5', 'name': AiFillHtml5 },
     {'title': 'Node.js', 'name': FaNodeJs },
   ],
+  'link': 'https://seth-harlaar.github.io/Fancy-Nav/',
 }
 
 const projectList = [

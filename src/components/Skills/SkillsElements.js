@@ -19,7 +19,8 @@ export const CardContainer = styled.div`
 `
 
 export const SkillContainer = styled.div`
-  display: flex;
+  flex: 1;  
+display: flex;
   gap: 15px;
   color: white;
   background: #0e182b;
@@ -45,6 +46,7 @@ export const SkillList = styled.ul`
 
 export const ListItem = styled.li`
   color: #B6B6B6;
+  font-size: 12px;
 
   &:before {
     content: "• ";
@@ -52,6 +54,5 @@ export const ListItem = styled.li`
     font-weight: bold;
     display: inline-block; 
     width: 1em;
-    margin-left: -1em;
   }
 `

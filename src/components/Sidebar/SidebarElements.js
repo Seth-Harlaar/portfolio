@@ -101,6 +101,11 @@ export const ContactItem = styled.div`
   }
 `
 
+export const ContactLink = styled.a`
+  color: inherit;
+  text-decoration: none;
+`
+
 // * * * * * * * * * * * *
 // * * Contact Section * *
 // * * * * * * * * * * * *
@@ -160,7 +165,9 @@ export const ResumeDownloadContainer = styled.div`
   }
 `
 
-export const ResumeDownloadPhrase = styled.h1`
+export const ResumeDownloadPhrase = styled.a`
+  color: inherit;
+  text-decoration: none;
   font-size: 12px;
 `
 

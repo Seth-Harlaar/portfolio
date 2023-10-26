@@ -1,7 +1,8 @@
-import { ReviewsContainer, ReviewCard, ReviewName, ReviewSource, ReviewDescription, ReviewRatingContainer, ReviewTitle, ReviewSectionContainer } from "./ReviewElements";
+import { ReviewsContainer, ReviewCard, ReviewName, ReviewSource, ReviewDescription, ReviewRatingContainer, ReviewTitle, ReviewSectionContainer, ExternalLink } from "./ReviewElements";
 
 
 import { AiFillStar } from  'react-icons/ai';
+import { BiLinkExternal } from 'react-icons/bi';
 
 const ReviewStarStyle = {
   fontSize: '12px',
@@ -43,7 +44,10 @@ const Reviews = () => {
             <ReviewDescription>"Seth is pleasure to work with. He can dive deep into 
               complicated problems and deliver great results. Highly recommend."</ReviewDescription>
             
+            
             <ReviewRating/>
+            <ExternalLink href="https://www.upwork.com/freelancers/~014198985ea7865313?viewMode=1"><BiLinkExternal/></ExternalLink>
+            
             
           </ReviewCard>
           
@@ -63,7 +67,8 @@ const Reviews = () => {
               again in the near future."</ReviewDescription>
 
               <ReviewRating/>
-
+              <ExternalLink href="https://www.upwork.com/freelancers/~014198985ea7865313?viewMode=1"><BiLinkExternal/></ExternalLink>
+              
           </ReviewCard>
 
         </ReviewsContainer>

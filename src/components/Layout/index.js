@@ -25,7 +25,7 @@ const Layout = () => {
 
           <div style={{width:'calc(100% - 300px)', overflowY:'auto', height:'100%', paddingLeft:'0px'}}>
             <HeroSection />
-            <Skills></Skills>
+            <Skills/>
             <ProjectSection/>
             <Reviews/>
             <Footer/>

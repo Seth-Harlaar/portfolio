@@ -1,3 +1,5 @@
+import { CgWebsite } from 'react-icons/cg';
+
 export const skillData = {
 
   skills: [
@@ -46,3 +48,55 @@ export const skillData = {
    
   ]
 }
+
+export const SkillBlocks = [
+  {
+    'title': 'Web Development',
+    'description': 'During my four years of my Computer Engineering program at the University of Guelph, I gained experience in several web development technologies.',
+    'list': [
+      'JavaScript',
+      'HTML', 
+      'CSS',
+      'MySQL',
+      'JUnit Testing',
+      'Java',
+      'Git'
+    ],
+    'icon': CgWebsite,
+  },
+  {
+    'title': 'Passion and Ability for Learning',
+    'description': 'In my free time, I have shown my ability and passion for learning other web development technologies.',
+    'icon': CgWebsite,
+    'list': [
+      'Node.js',
+      'React.js',
+      'Tailwind CSS',
+      'Visual Studio',
+      'Linux',
+    ],
+  },
+  {
+    'title': 'Soft Skills',
+    'description': 'Throughout my software development journey, I have acquired the soft skills it takes to be an excellent software developer.',
+    'icon': CgWebsite,
+    'list': [
+      'Problem Solving',
+      'Troubleshooting',
+      'Analysis',
+      'Working Collaboratively',
+      'Proactive',
+      'Multi-tasking'
+    ],
+  },
+
+]
+
+// Throughout my software development journey, I have acquired the soft skills it
+// takes to be an excellent software developer. Through many hours of
+// programming, math, and engineering, in and outside of school, I acquired strong
+// skills in problem solving, troubleshooting, and analysis. I have worked on many
+// projects with my colleagues and peers, demonstrating my ability to work
+// collaboratively. Through a heavy workload in my achievement of a Bachelor of
+// Engineering I have learned to be proactive and to multi-task well to tackle
+// multiple projects and deliver on time.

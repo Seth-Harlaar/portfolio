@@ -5,19 +5,20 @@ import {  ProjectSectionContainer, ProjectSectionBackground, ProjectSectionTitle
           PictureContainer, PictureIconContainer, IconContainer, 
           ProjectPicture, ProjectTitle, ProjectDescription, 
           IconDescription, IconGroup, PictureLeft,
-          PictureRight, PictureMenuContainer } from "./ProjectsElements";
+          PictureRight, PictureMenuContainer, ViewProject } from "./ProjectsElements";
 
 // icons
-import { AiFillHtml5 } from 'react-icons/ai';
-import { FaNodeJs } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
-import { DiReact } from 'react-icons/di';
+import { BiLinkExternal } from 'react-icons/bi';
 
 // images
 import projectList from "./projectInfo";
 
 const IconStyle = {
   fontSize:'28px',
+}
+
+const WrapperStyle = {
+  position:'relative',
 }
 
 
@@ -89,7 +90,7 @@ const ProjectSection = () => {
 // project showcase template
 function ProjectShowcase({projectInfo, pictureIndex}){
   return(
-    <>
+    <div style={WrapperStyle}>
       <ProjectTitle>{projectInfo.title}</ProjectTitle>
       
       <PictureIconContainer>
@@ -110,12 +111,15 @@ function ProjectShowcase({projectInfo, pictureIndex}){
           }
 
         </IconContainer>
+
+        
       </PictureIconContainer>
 
       <ProjectDescription>
         {projectInfo.description}
       </ProjectDescription>
-    </>
+      <ViewProject href={projectInfo.link}><BiLinkExternal/></ViewProject>
+    </div>
   )
 }
 

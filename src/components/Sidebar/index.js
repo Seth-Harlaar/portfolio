@@ -1,19 +1,22 @@
 import React from 'react'
 
 // elements
-import { SidebarContainer, ProfileCard, ProfilePic, ProfileName, ProfileTitle, ProfilePicContainer, ProfileLocation, ContactContainer, ResumeDownloadContainer, ResumeDownloadPhrase, } from './SidebarElements';
+import { SidebarContainer, ProfileCard, ProfilePic, ProfileName, ProfileTitle, ProfilePicContainer, ProfileLocation, ContactContainer, ResumeDownloadContainer, ResumeDownloadPhrase, ContactLink, } from './SidebarElements';
 import { ContactTitle, ContactsList, ContactsListContainer, ContactItem } from './SidebarElements';
 import { SkillsSectionContainer, SkillsTitle, SubjectTitle, SubjectCard, SubjectDecscription, DashedDivider } from './SidebarElements';
 
 // icons
 import { AiFillLinkedin, AiFillCode, AiOutlineDownload } from 'react-icons/ai';
 import { CgWebsite } from 'react-icons/cg';
-import { FaPhoneSquareAlt, FaGithubSquare, FaMobile } from 'react-icons/fa';
+import { FaGithubSquare, FaMobile } from 'react-icons/fa';
 import { SiUpwork } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 
 // pictures
 import logo from '../../images/seth_pic.jpg'
+
+// files
+import resume from '../../papers/seth_resume.pdf';
 
 // styles
 const IconStyle = {
@@ -67,14 +70,14 @@ const ContactSection = () => {
 
         <ContactsListContainer>
           <ContactsList>
-            <ContactItem><AiFillLinkedin style={IconStyle}/>LinkedIn</ContactItem>
-            <ContactItem><FaPhoneSquareAlt style={IconStyle}/>519-400-2691</ContactItem>
-            <ContactItem><MdEmail style={IconStyle}/>sjharlaar@gmail.com</ContactItem>
+            <ContactItem><AiFillLinkedin style={IconStyle}/><ContactLink href="https://www.linkedin.com/in/seth-harlaar-866635228/">LinkedIn</ContactLink></ContactItem>
+            {/* <ContactItem><FaPhoneSquareAlt style={IconStyle}/>519-400-2691</ContactItem> */}
+            <ContactItem><MdEmail style={IconStyle}/><ContactLink href="mailto:sjharlaar@gmail.com">sjharlaar@gmail.com</ContactLink></ContactItem>
           </ContactsList>
 
           <ContactsList>
-            <ContactItem><FaGithubSquare style={IconStyle}/>Github</ContactItem>
-            <ContactItem><SiUpwork style={IconStyle}/>Upwork</ContactItem>
+            <ContactItem><FaGithubSquare style={IconStyle}/><ContactLink href="https://github.com/Seth-Harlaar">Github</ContactLink></ContactItem>
+            <ContactItem><SiUpwork style={IconStyle}/><ContactLink href="https://www.upwork.com/freelancers/~014198985ea7865313?viewMode=1">Upwork</ContactLink></ContactItem>
           </ContactsList>
         </ContactsListContainer>
       </ContactContainer>
@@ -91,7 +94,7 @@ const SkillsSection = () => {
         <SubjectCard>
           <SubjectTitle><CgWebsite style={IconStyle}/>Web Development</SubjectTitle>
           <SubjectDecscription>
-            blah blah blah blah blah blah blah blah blah blah blah blah 
+            React.js &middot; Node.js &middot; HTML &middot; CSS &middot; JavaScript &middot; Tailwind CSS
           </SubjectDecscription>
         </SubjectCard>
 
@@ -100,7 +103,7 @@ const SkillsSection = () => {
         <SubjectCard>
           <SubjectTitle><AiFillCode style={IconStyle}/>Software Development</SubjectTitle>
           <SubjectDecscription>
-            blah blah blah blah blah blah blah blah blah blah blah blah 
+            Python &middot; C &middot; Java &middot; Visual Studio &middot; Git
           </SubjectDecscription>
         </SubjectCard>
 
@@ -109,7 +112,7 @@ const SkillsSection = () => {
         <SubjectCard>
           <SubjectTitle><FaMobile style={IconStyle}/>Mobile Development</SubjectTitle>
           <SubjectDecscription>
-            blah blah blah blah blah blah blah blah blah blah blah blah 
+            Dart &middot; Flutter &middot; Java &middot; Android Studio
           </SubjectDecscription>
         </SubjectCard>
 
@@ -122,7 +125,7 @@ const ResumeDownload = () => {
   return (
     <>
       <ResumeDownloadContainer>
-        <ResumeDownloadPhrase><AiOutlineDownload style={IconStyle}/>Download My Resume</ResumeDownloadPhrase>
+        <ResumeDownloadPhrase href={resume} download="Seth Harlaar Resume"><AiOutlineDownload style={IconStyle}/>Download My Resume</ResumeDownloadPhrase>
       </ResumeDownloadContainer>
     </>
   )
@@ -144,3 +147,13 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+
+// React.js
+// Node.js
+// HTML
+// CSS
+// JavaScript
+// Flutter
+// Tailwind CSS
+// Python

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const ProjectSectionBackground = styled.div`
   padding: 0 30px 30px 30px;
-  `
+`
   
 export const ProjectSectionContainer = styled.div`
   padding: 30px;
@@ -28,11 +28,14 @@ export const PictureIconContainer = styled.div`
 `
 
 export const PictureContainer = styled.div`
-  flex: 1;
-  height: 550px;
-  outline: 2px solid #FCA311;
+  display: flex;
+  align-items: center;
+  height: 387px;
+  width: 580px;
   margin-right: 20px;
+  outline: 2px solid #FCA311;
   padding: 10px;
+  background-color: #05080F;
 `
 
 export const PictureMenuContainer = styled.div`
@@ -41,11 +44,10 @@ export const PictureMenuContainer = styled.div`
 `
 
 export const PictureLeft = styled.div`
-  
   color: white;
-
   &:hover {
     color: green;
+    cursor: pointer;
   }
 `
 
@@ -100,4 +102,16 @@ export const ProjectDescription = styled.p`
   text-align: justify;
   font-size: 13px;
   color: #B6B6B6;
+`
+
+
+export const ViewProject = styled.a`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #B6B6B6;
+
+  &:hover {
+    color: #FCA311;
+  }
 `

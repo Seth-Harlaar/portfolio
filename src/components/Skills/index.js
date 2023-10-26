@@ -7,12 +7,11 @@ import  {
   SkillList,
   CardContainer,
   ListItem,
-
 } from './SkillsElements.js'
 
 
 // icons
-import { CgWebsite } from 'react-icons/cg';
+import { SkillBlocks } from './Data.js';
 
 const IconStyle = {
   fontSize:'50px',
@@ -21,18 +20,23 @@ const IconStyle = {
 
 
 // for skill cards
-const SkillCard = ({title, description, Icon}) => {
+const SkillCard = ({title, description, icon, list}) => {
+  
   return (
     <>
       <SkillContainer>
-        {Icon}
+        {icon}
         <div>
-          <SKillTitle>Web Development</SKillTitle>
-          <SkillDescription>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</SkillDescription>
+          <SKillTitle>{title}</SKillTitle>
+          <SkillDescription>{description}</SkillDescription>
           <SkillList>
-            <ListItem>asdf</ListItem>
-            <ListItem>asdf</ListItem>
-            <ListItem>asdf</ListItem>
+            {
+              list.map(item =>{
+                return(
+                  <ListItem>{item}</ListItem>
+                )
+              })
+            }
           </SkillList>
         </div>
         
@@ -50,9 +54,14 @@ const SkillsSection = () => {
       <SkillSectionContainer id={"skills"}>
 
         <CardContainer>
-          <SkillCard Icon={CgWebsite}/>
-          <SkillCard/>
-          <SkillCard/>
+          {/* takes the skill block data from Data.js and maps each skill into a skill card */}
+          {
+            SkillBlocks.map(skill =>{
+              return(
+                <SkillCard {...skill}/>
+              )
+            })
+          }
         </CardContainer>
 
       </SkillSectionContainer>

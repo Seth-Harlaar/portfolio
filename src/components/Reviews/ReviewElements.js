@@ -57,3 +57,13 @@ export const ReviewRatingContainer = styled.div`
   border-radius: 20px;
 `
 
+export const ExternalLink = styled.a`
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #B6B6B6;
+
+  &:hover {
+    color: #FCA311;
+  }
+`
