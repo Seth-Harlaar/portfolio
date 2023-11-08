@@ -7,6 +7,7 @@ import Footer from '../Footer';
 import Skills from '../Skills';
 import Reviews from '../Reviews'
 import ProjectSection from '../ProjectSection';
+import ContactSection from '../Contact';
 
 // theme
 import { ThemeProvider } from 'styled-components';
@@ -28,6 +29,7 @@ const Layout = () => {
             <Skills/>
             <ProjectSection/>
             <Reviews/>
+            <ContactSection/>
             <Footer/>
           </div>
         </Splitter>
