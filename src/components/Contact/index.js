@@ -1,9 +1,22 @@
 import React from 'react'
-
+import emailjs from 'emailjs-com';
 
 import { CallToMessage, ContactSectionBackground, ContactSectionContainer, ContactSectionTitle, FieldContainer, FormContainer, InputWrapper, NameLine, SendButton, StyledInput, StyledLabel } from './ContactElements';
 
 const ContactSection = () => {
+  function sendEmail(e){
+    e.preventDefault();
+
+    emailjs.sendForm('service_7d6hwmn', 'template_mmkoolq', e.target, 'qGkgBUkkqo3MDqlkU')
+      .then((result) => {
+          const form = document.getElementById("email-form");
+          form.reset();
+          console.log('email sent');
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
   return(
     <>
       <ContactSectionBackground>
@@ -13,21 +26,21 @@ const ContactSection = () => {
             I'll be glad to answer your questions!
           </CallToMessage>
           <FormContainer>
-            <form>
+            <form onSubmit={sendEmail} id="email-form">
               <FieldContainer>
                 <NameLine>
                   <InputWrapper>
-                    <StyledInput name="firstName" placeholder="first name"/>
-                    <StyledLabel for="firstName">First Name</StyledLabel>
+                    <StyledInput name="name" placeholder="first name"/>
+                    <StyledLabel for="name">Name</StyledLabel>
                   </InputWrapper>
                   <InputWrapper>
-                    <StyledInput name="lastName" placeholder="last name"/>
-                    <StyledLabel for="lastName">Last Name</StyledLabel>
+                    <StyledInput name="subject" placeholder="last name"/>
+                    <StyledLabel for="subject">Subject</StyledLabel>
                   </InputWrapper>
                 </NameLine>
                 <InputWrapper>
                   <StyledInput name="email" placeholder="email"/>
-                  <StyledLabel for="email">Email</StyledLabel>
+                  <StyledLabel for="email">Return Email</StyledLabel>
                 </InputWrapper>
                 <InputWrapper>
                   <StyledInput name="message" placeholder="message"/>

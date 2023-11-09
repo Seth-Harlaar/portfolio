@@ -109,8 +109,14 @@ export const SendButton = styled.button`
   color: #0e182b;
   font-weight: 700;
   background-color: #FCA311;
+  transition: 0.1s;
 
   &:hover {
     cursor: pointer;
+  }
+
+  &:active {
+    background-color: #c9820c;
+    transform: scale(0.9);
   }
 `
