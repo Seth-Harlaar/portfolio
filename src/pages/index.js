@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import Skills from '../components/Skills';
 import HeroSection from '../components/HeroSection';
 import ProjectSection from '../components/ProjectSection';

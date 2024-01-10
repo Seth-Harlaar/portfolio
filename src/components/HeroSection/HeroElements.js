@@ -3,17 +3,20 @@ import {keyframes} from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
 
 import BackgroundImage from '../../assets/images/background/abstract_dotted.avif';
+import backgroundImage2 from '../../assets/images/background/background.webp';
 
 export const HeroPaddingContainer = styled.div`
   position: relative;
-  padding: 0 30px;
+  padding-top: 30px;
   margin-bottom: 30px;
 
   background: #0e182b;
 
   &:after {
     content: "";
-    background-image: url(${BackgroundImage});
+    background-image: url(${backgroundImage2});
+    background-size: 100%;
+    filter: grayscale(50%);
     position: absolute;
     top: 0;
     right: 0;
@@ -28,7 +31,6 @@ export const HeroContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 5vh 50px 5vh 50px;
   overflow: hidden;
   opacity: 1;
 `
@@ -49,9 +51,8 @@ export const HeroPicture = styled.img`
 
 export const HeroText = styled.div`
   flex-grow: 1;
-  padding-left: 80px;
+  
 `
-
 export const HeroH1 = styled.h1`
   margin: 20px 0 10px 0;
   text-transform: uppercase;
@@ -65,6 +66,7 @@ export const HeroH2 = styled.h1`
   font-size: 15px;
 `
 export const HeroH3 = styled.h1`
+  max-width: 720px;
   text-align: justify;
   font-weight: normal;
   color: #B6B6B6;

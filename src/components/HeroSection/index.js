@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   HeroContainer,
   HeroText,
@@ -9,14 +9,18 @@ import {
 } from './HeroElements'
 
 
+import {ScreenContext} from '../../providers/screenProvider';
+
 const HeroSection = () => {
+
+  const {isSmallScreen} = useContext(ScreenContext);
 
   return (
     <>
       <HeroPaddingContainer>
-        <HeroContainer id={'home'}>
+        <HeroContainer id={'home'} smallscreen={isSmallScreen ? "true" : undefined}>
 
-          <HeroText>
+          <HeroText smallscreen={isSmallScreen ? "true" : undefined}>
             {/* Turning ideas into software ... something */}
             <HeroH2>hello, my name is</HeroH2>
             <HeroH1>seth harlaar</HeroH1>

@@ -12,11 +12,13 @@ export const ReviewSectionContainer = styled.div`
 
 export const ReviewsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   color: #E5E5E5;
 `
 
 export const ReviewCard = styled.div`
+  min-width: 250px;
   flex: 1;
   position: relative;
   padding: 30px;

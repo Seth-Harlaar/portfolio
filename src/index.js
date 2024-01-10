@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import {ScreenProvider} from './providers/screenProvider';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from 'styled-components';
+import { goodTheme } from './pages/theme';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <ScreenProvider>
-      <App />
+      <ThemeProvider theme={goodTheme}>
+        <App />
+      </ThemeProvider>
     </ScreenProvider>
   </React.StrictMode>,
   document.getElementById('root')

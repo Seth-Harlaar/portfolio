@@ -1,6 +1,7 @@
 import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
 
 import styled from 'styled-components';
+import backgroundImage2 from '../../assets/images/background/background.webp';
 
 
 export const ProjectSectionBackground = styled.div`
@@ -10,6 +11,21 @@ export const ProjectSectionBackground = styled.div`
 export const ProjectSectionContainer = styled.div`
   padding: 30px;
   background-color: #0e182b;
+  
+  position: relative;
+
+  &:before {
+    content: "";
+    background-image: url(${backgroundImage2});
+    background-size: 100%;
+    filter: grayscale(50%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.05;
+  }
 `
 
 export const ProjectSectionTitle = styled.h1`
@@ -163,7 +179,7 @@ export const Padder = styled.div`
   flex: none;
   height: 400px;
   width: 100%;
-  background-color: rgb(252, 252, 252, 0.05 );
+  background-color: #181f30;
   padding: 0 8px;
   background-clip: content-box;
 `

@@ -11,15 +11,9 @@ import  {
   ListItem,
 } from './SkillsElements.js'
 
-
 // icons
 import { SkillBlocks } from './Data.js';
 import { useContext } from 'react';
-
-const iconStyle = {
-  fontSize:'50px',
-  color:'#FCA311',
-}
 
 
 // for skill cards
