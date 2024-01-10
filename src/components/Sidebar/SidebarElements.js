@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import { Link as LinkS } from 'react-scroll';
-import { Link as LinkR } from 'react-router-dom';
-import { FaTimes } from 'react-icons/fa';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaRegWindowClose } from "react-icons/fa";
+
+
+
 
 
 // * * * * * * * * * * * *
@@ -13,10 +15,61 @@ export const SidebarContainer = styled.div`
   background-color: #0C1424;
   width: 300px;
   color: #E5E5E5;
+  display: flex;
+  flex-direction: column;
 `
 
 
+export const InfoSection = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 10px 0;
+  // scrollbar-color: rgba(0,0,0,0) rgba(0,0,0,0);
+`
 
+
+export const DrawerContainer = styled.div`
+  width: ${props => props.visible ? "100%" : "0"};
+  overflow-x: hidden;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+  transition-duration: 150ms;
+`
+export const Drawer = styled.div`
+  width: 300px;
+  background-color: #0C1424;
+  height: 100%;
+`
+
+export const BurgerMenu = styled(GiHamburgerMenu)`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 22px;
+  color: white;
+  
+  &:hover {
+    cursor: pointer;
+  }
+`
+
+export const CloseButton = styled(FaRegWindowClose)`
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  color: white;
+
+  &:hover {
+    cursor:pointer;
+  }
+`
 
 
 // * * * * * * * * * * * *
@@ -69,7 +122,7 @@ export const ProfileLocation = styled.h1`
 // * * * * * * * * * * * *
 
 export const ContactContainer = styled.div`
-  padding: 30px 0;
+  padding: 30px 0 0 0;
 `
 
 export const ContactTitle = styled.h1`
@@ -153,10 +206,12 @@ export const SubjectDecscription = styled.div`
 // * * * * * * * * * * * *
 
 export const ResumeDownloadContainer = styled.div`
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translate(-50%, 0);
+  // position: absolute;
+  // bottom: 10px;
+  // left: 50%;
+  // transform: translate(-50%, 0);
+  text-align: center;
+  padding: 15px 0;
 
   transition: 150ms;
   &:hover {
@@ -169,81 +224,4 @@ export const ResumeDownloadPhrase = styled.a`
   color: inherit;
   text-decoration: none;
   font-size: 12px;
-`
-
-
-// * * * * * * * * * * * *
-// * * *  Old Stuff  * * *
-// * * * * * * * * * * * *
-
-
-export const CloseIcon = styled(FaTimes)`
-  color: #fff
-`
-
-export const Icon = styled.div`
-  position: absolute;
-  top: 1.2rem;
-  right: 1.5rem;
-  background: transparent;
-  font-size: 2rem;
-  cursor: pointer;
-  outline: none;
-`
-
-export const SidebarWrapper = styled.div`
-  color: #fff;
-`
-
-export const SidebarMenu = styled.ul`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 80px);
-  text-align: center;
-
-  @media screen and (max-width: 480px){
-    grid-template-rows: repeat(6, 60px);
-  }
-`
-
-export const SidebarLink = styled(LinkS)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  list-style: none;
-  transition: 0.2s ease-in-out
-  color: #fff;
-  cursor: pointer;
-
-  &:hover {
-    color: #01BF71;
-    transition: 0.2s ease-in-out;
-  }
-`
-
-export const SideBtnWrap = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
-export const SidebarRoute = styled(LinkR)`
-  border-radius: 50px;
-  background: #01BF71;
-  white-space: nowrap;
-  padding: 16px 64px;
-  color: #010606;
-  font-size: 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
-  }
 `

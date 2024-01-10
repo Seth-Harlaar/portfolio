@@ -31,20 +31,20 @@ const ContactSection = () => {
                 <NameLine>
                   <InputWrapper>
                     <StyledInput name="name" placeholder="first name"/>
-                    <StyledLabel for="name">Name</StyledLabel>
+                    <StyledLabel htmlFor="name">Name</StyledLabel>
                   </InputWrapper>
                   <InputWrapper>
                     <StyledInput name="subject" placeholder="last name"/>
-                    <StyledLabel for="subject">Subject</StyledLabel>
+                    <StyledLabel htmlFor="subject">Subject</StyledLabel>
                   </InputWrapper>
                 </NameLine>
                 <InputWrapper>
                   <StyledInput name="email" placeholder="email"/>
-                  <StyledLabel for="email">Return Email</StyledLabel>
+                  <StyledLabel htmlFor="email">Return Email</StyledLabel>
                 </InputWrapper>
                 <InputWrapper>
                   <StyledInput name="message" placeholder="message"/>
-                  <StyledLabel for="message">Message</StyledLabel>
+                  <StyledLabel htmlFor="message">Message</StyledLabel>
                 </InputWrapper>
                 <SendButton type="submit">Send</SendButton>
               </FieldContainer>

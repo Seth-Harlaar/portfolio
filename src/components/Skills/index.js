@@ -13,27 +13,28 @@ import  {
 // icons
 import { SkillBlocks } from './Data.js';
 
-const IconStyle = {
+const iconStyle = {
   fontSize:'50px',
   color:'#FCA311',
 }
 
 
 // for skill cards
-const SkillCard = ({title, description, icon, list}) => {
+const SkillCard = ({title, description, Icon, list}) => {
   
   return (
     <>
       <SkillContainer>
-        {icon}
+        {/* <Icon /> */}
+        <Icon className="h-10 w-10 text-darkBg"/>
         <div>
           <SKillTitle>{title}</SKillTitle>
           <SkillDescription>{description}</SkillDescription>
           <SkillList>
             {
-              list.map(item =>{
+              list.map((item, index) =>{
                 return(
-                  <ListItem>{item}</ListItem>
+                  <ListItem key={index}>{item}</ListItem>
                 )
               })
             }
@@ -56,9 +57,9 @@ const SkillsSection = () => {
         <CardContainer>
           {/* takes the skill block data from Data.js and maps each skill into a skill card */}
           {
-            SkillBlocks.map(skill =>{
+            SkillBlocks.map((skill, index) =>{
               return(
-                <SkillCard {...skill}/>
+                <SkillCard key={index} {...skill}/>
               )
             })
           }

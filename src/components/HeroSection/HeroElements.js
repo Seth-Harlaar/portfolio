@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {keyframes} from 'styled-components';
 import { Link as LinkS } from 'react-scroll';
 
-import BackgroundImage from '../../images/background/abstract_dotted.avif';
+import BackgroundImage from '../../assets/images/background/abstract_dotted.avif';
 
 export const HeroPaddingContainer = styled.div`
   position: relative;

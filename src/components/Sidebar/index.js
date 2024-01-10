@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import {ScreenContext} from '../../providers/screenProvider';
 
 // elements
-import { SidebarContainer, ProfileCard, ProfilePic, ProfileName, ProfileTitle, ProfilePicContainer, ProfileLocation, ContactContainer, ResumeDownloadContainer, ResumeDownloadPhrase, ContactLink, } from './SidebarElements';
+import { SidebarContainer, ProfileCard, ProfilePic, ProfileName, ProfileTitle, ProfilePicContainer, ProfileLocation, ContactContainer, ResumeDownloadContainer, ResumeDownloadPhrase, ContactLink, DrawerContainer, Drawer, BurgerMenu, CloseButton, } from './SidebarElements';
 import { ContactTitle, ContactsList, ContactsListContainer, ContactItem } from './SidebarElements';
-import { SkillsSectionContainer, SkillsTitle, SubjectTitle, SubjectCard, SubjectDecscription, DashedDivider } from './SidebarElements';
+import { SkillsSectionContainer, SkillsTitle, SubjectTitle, SubjectCard, SubjectDecscription, DashedDivider, InfoSection } from './SidebarElements';
 
 // icons
 import { AiFillLinkedin, AiFillCode, AiOutlineDownload } from 'react-icons/ai';
@@ -13,10 +14,10 @@ import { SiUpwork } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 
 // pictures
-import logo from '../../images/seth_pic.jpg'
+import logo from '../../assets/images/seth_pic.jpg'
 
 // files
-import resume from '../../papers/seth_resume.pdf';
+import resume from '../../assets/papers/seth_resume.pdf';
 
 // styles
 const IconStyle = {
@@ -27,11 +28,9 @@ const IconStyle = {
 
 
 // components
-
 const Divider = () => {
   return (
     <>
-      {/* <hr style={{color:'#FCA311'}}/> */}
       <hr/>
     </>
   )
@@ -128,25 +127,73 @@ const ResumeDownload = () => {
         <ResumeDownloadPhrase href={resume} download="Seth Harlaar Resume"><AiOutlineDownload style={IconStyle}/>Download My Resume</ResumeDownloadPhrase>
       </ResumeDownloadContainer>
     </>
-  )
+  );
 }
 
 
 const Sidebar = () => {
+
   return (
     <SidebarContainer>
       <ProfileSection/>
       <Divider/>
-      <ContactSection/>
-      <Divider/>
-      <SkillsSection/>
+      <InfoSection>
+        <ContactSection/>
+        <SkillsSection/>
+      </InfoSection>
 
+      <Divider/>
       <ResumeDownload/>
     </SidebarContainer>
   );
 };
 
-export default Sidebar;
+function SidebarDrawer(){
+  const [visible, setVisible] = useState(false);
+
+  function viewSidebar(){
+    setVisible(true);
+  }
+
+  function closeSidebar(){
+    setVisible(false);
+  }
+
+  return (
+    <>
+      <DrawerContainer visible={visible ? "true" : undefined}>
+        <CloseButton onClick={closeSidebar}/>
+        
+        <Drawer visible={visible ? "true" : undefined}>
+          <Sidebar/>
+        </Drawer>
+      </DrawerContainer>
+
+
+      {/* open drawer button */}
+      <BurgerMenu onClick={viewSidebar}/>
+    </>
+  );
+}
+
+
+// wrapper for openning and closing based on screen size
+
+function SidebarWrapper (){
+
+  const {isLrgScreen} = useContext(ScreenContext);
+
+  return (
+    <>
+      {isLrgScreen ? <Sidebar/> : <SidebarDrawer/>  }
+    
+
+    </>
+  );
+}
+
+
+export default SidebarWrapper;
 
 
 // React.js

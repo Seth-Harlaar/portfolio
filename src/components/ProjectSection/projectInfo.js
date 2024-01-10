@@ -1,8 +1,8 @@
 // images
-import browsPicture from '../../images/project_pics/custom_browser/main.png';
-import browsPicture2 from '../../images/project_pics/custom_browser/old.png';
-import navPic from '../../images/project_pics/fancy_nav/nav_home.png';
-import navPic2 from '../../images/project_pics/fancy_nav/nav_nav.png';
+import browsPicture from '../../assets/images/project_pics/custom_browser/main.png';
+import browsPicture2 from '../../assets/images/project_pics/custom_browser/old.png';
+import navPic from '../../assets/images/project_pics/fancy_nav/nav_home.png';
+import navPic2 from '../../assets/images/project_pics/fancy_nav/nav_nav.png';
 
 // icons
 import { AiFillHtml5 } from 'react-icons/ai';

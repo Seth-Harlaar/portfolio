@@ -14,12 +14,12 @@ import {
   ExitButton
 } from './OtherElements'
 
-import deepqPreview from '../../images/deep_q_paper.png'
-import hvacPreview from '../../images/hvac.png'
-import inversePreview from '../../images/inverse_quad_preview.jpg'
+import deepqPreview from '../../assets/images/deep_q_paper.png'
+import hvacPreview from '../../assets/images/hvac.png'
+import inversePreview from '../../assets/images/inverse_quad_preview.jpg'
 
-import hvacDoc from '../../papers/hvac.pdf'
-import deepDoc from '../../papers/deepq.pdf'
+import hvacDoc from '../../assets/papers/hvac.pdf'
+import deepDoc from '../../assets/papers/deepq.pdf'
 
 const hvacDesc = 'This was a design project me and my partners completed as our capstone project. We designed an automatic HVAC zoning system that could save money and control the temperature of each room.'
 const deepqDesc = 'In this project me and my partner designed a task scheduling algorithm that uses a Deep Q-Network to determine execution order.'

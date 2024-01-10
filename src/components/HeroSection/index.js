@@ -5,9 +5,6 @@ import {
   HeroH1,
   HeroH2,
   HeroH3,
-  HeroButton,
-  HeroArrow,
-  Spacer,
   HeroPaddingContainer
 } from './HeroElements'
 

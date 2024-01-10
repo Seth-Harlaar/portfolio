@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+
+// images
+import browsPicture from '../../assets/images/project_pics/custom_browser/main.png';
+import browsPicture2 from '../../assets/images/project_pics/custom_browser/old.png';
+
 // elements
 import {  ProjectSectionContainer, ProjectSectionBackground, ProjectSectionTitle, 
           PictureContainer, PictureIconContainer, IconContainer, 
@@ -12,6 +17,7 @@ import { BiLinkExternal } from 'react-icons/bi';
 
 // images
 import projectList from "./projectInfo";
+import PictureSlider from "./pictureSlider";
 
 const IconStyle = {
   fontSize:'28px',
@@ -20,6 +26,11 @@ const IconStyle = {
 const WrapperStyle = {
   position:'relative',
 }
+
+const browsPics = [
+  browsPicture,
+  browsPicture2
+];
 
 
 const ProjectSection = () => {
@@ -74,7 +85,9 @@ const ProjectSection = () => {
         <ProjectSectionTitle>Project Showcase</ProjectSectionTitle>
         <ProjectSectionContainer>
           
-          <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/>
+          {/* <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/> */}
+
+          <PictureSlider imageList={browsPics}/>
 
           <PictureMenuContainer>
             <PictureLeft onClick={() => {leftProject(projectList)}}>{'<'}</PictureLeft>

@@ -1,3 +1,5 @@
+import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
+
 import styled from 'styled-components';
 
 
@@ -114,4 +116,78 @@ export const ViewProject = styled.a`
   &:hover {
     color: #FCA311;
   }
+`
+
+
+
+
+
+// picture slider 
+export const SliderContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+`
+
+export const SliderImageContainer = styled.div`
+  position: relative;
+  width: 83%;
+  margin: auto;
+`
+
+// offset
+export const ImageSliderContainer = styled.div`
+  position: relative;
+  height: 400px;
+  width: 100%;
+  transition-duration: 100ms;
+`
+
+export const ImageSlider = styled.div`
+  position: absolute;
+  display: flex;
+  width: 100%;
+`
+
+export const SlidingImage = styled.img`
+  flex: none;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  padding: 0 8px;
+  user-select: none;
+`
+
+
+export const Padder = styled.div`
+  flex: none;
+  height: 400px;
+  width: 100%;
+  background-color: rgb(252, 252, 252, 0.05 );
+  padding: 0 8px;
+  background-clip: content-box;
+`
+
+export const LeftArrow = styled(IoMdArrowDropleftCircle)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  font-size: 28px;
+  &:hover {
+    cursor: ${props => props.canmove ? 'pointer' : 'default'};
+  }
+  color: ${props => props.canmove ? 'rgb(252, 163, 17)' : 'rgb(252, 252, 252, 0.5 )'};
+`
+
+export const RightArrow = styled(IoMdArrowDroprightCircle)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  font-size: 28px;
+  &:hover {
+    cursor: ${props => props.canmove ? 'pointer' : 'default'};
+  }
+  color: ${props => props.canmove ? 'rgb(252, 163, 17)' : 'rgb(252, 252, 252, 0.5 )'};
 `
