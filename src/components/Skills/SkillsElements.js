@@ -15,12 +15,16 @@ export const SkillSectionContainer = styled.div`
 
 export const CardContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
 `
 
 export const SkillContainer = styled.div`
-  flex: 1;  
-display: flex;
+  min-width: 245px;
+  max-width: ${props => props.megascreen ? "530px" : undefined};
+  flex: 1;
+  display: flex;
   gap: 15px;
   color: white;
   background: #0e182b;

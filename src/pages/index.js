@@ -9,27 +9,16 @@ import SidebarWrapper from '../components/Sidebar';
 import { ScreenContext } from '../providers/screenProvider';
 
 
-
-
-
-
-
-
-
 const Home = () => {
-  const {isLrgScreen} = useContext(ScreenContext);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen)
-  }
+  const {isLrgScreen, isMegaScreen} = useContext(ScreenContext);
 
   const splitterStyles = {
     display: "flex",
     height:"100%",
     width:"100%",
     overflowY:"hidden",
+    padding: isMegaScreen ?  "30px 70px" : "",
+    tranistionDuration: "200ms"
   }
 
   const mainStyles = {

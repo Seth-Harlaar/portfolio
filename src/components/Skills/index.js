@@ -1,3 +1,5 @@
+import {ScreenContext} from "../../providers/screenProvider.js"
+
 import  {
   SkillsTitle,
   SkillSectionContainer,
@@ -12,6 +14,7 @@ import  {
 
 // icons
 import { SkillBlocks } from './Data.js';
+import { useContext } from 'react';
 
 const iconStyle = {
   fontSize:'50px',
@@ -21,12 +24,11 @@ const iconStyle = {
 
 // for skill cards
 const SkillCard = ({title, description, Icon, list}) => {
+  const {isMegaScreen} = useContext(ScreenContext);
   
   return (
     <>
-      <SkillContainer>
-        {/* <Icon /> */}
-        <Icon className="h-10 w-10 text-darkBg"/>
+      <SkillContainer megascreen = {isMegaScreen ? "true" : undefined}>
         <div>
           <SKillTitle>{title}</SKillTitle>
           <SkillDescription>{description}</SkillDescription>

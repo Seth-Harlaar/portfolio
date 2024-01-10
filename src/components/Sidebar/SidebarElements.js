@@ -57,6 +57,8 @@ export const BurgerMenu = styled(GiHamburgerMenu)`
   &:hover {
     cursor: pointer;
   }
+
+  z-index: 1;
 `
 
 export const CloseButton = styled(FaRegWindowClose)`
