@@ -73,21 +73,15 @@ const ProjectSection = () => {
     return () => clearInterval(interval);
   }, [picIndex]);
 
-
-  // for project showcase
-  // - need list of pictures for each project
-  // - make slider for different projects
-  // - make pictures sizes standardized, container always same size
-
   return(
     <>
       <ProjectSectionBackground>
         <ProjectSectionTitle>Project Showcase</ProjectSectionTitle>
         <ProjectSectionContainer>
           
-          {/* <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/> */}
+          <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/>
 
-          <PictureSlider imageList={browsPics}/>
+          
 
           <PictureMenuContainer>
             <PictureLeft onClick={() => {leftProject(projectList)}}>{'<'}</PictureLeft>
@@ -107,25 +101,19 @@ function ProjectShowcase({projectInfo, pictureIndex}){
       <ProjectTitle>{projectInfo.title}</ProjectTitle>
       
       <PictureIconContainer>
-        <PictureContainer>
-          <ProjectPicture src={projectInfo.pictures[pictureIndex]}/>
-        </PictureContainer>
-
+        <PictureSlider imageList={projectInfo.pictures}/>
         <IconContainer>
           {
-            projectInfo.icons.map(icon => {
+            projectInfo.icons.map((icon, index) => {
               return(
-                <IconGroup>
+                <IconGroup key={index}>
                   <icon.name style={IconStyle}/>
                   <IconDescription>{icon.title}</IconDescription>
                 </IconGroup>
               )
             })
           }
-
         </IconContainer>
-
-        
       </PictureIconContainer>
 
       <ProjectDescription>

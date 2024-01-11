@@ -4,6 +4,7 @@ import React, {useContext, useEffect, useState} from "react";
 import { ImageSlider, ImageSliderContainer, LeftArrow, Padder, RightArrow, SliderContainer, SliderImageContainer, SlidingImage } from "./ProjectsElements";
 
 import {ScreenContext} from '../../providers/screenProvider';
+import { ModalContext } from "../../providers/modalProvider";
 
 
 function PictureSlider({imageList}){
@@ -71,10 +72,16 @@ function PictureSlider({imageList}){
   }
 
   const {isSmallScreen, isLrgScreen, isMegaScreen} = useContext(ScreenContext);
+  const {openModal} = useContext(ModalContext);
 
   let height = '400px';
   if(isSmallScreen || (isLrgScreen && !isMegaScreen)){
     height = '250px';
+  }
+
+  function showImageInModal(imageSrc){
+    console.log('showing modal');
+    openModal(<ImageForModal imageSrc={imageSrc}/>);
   }
 
   return(
@@ -87,7 +94,7 @@ function PictureSlider({imageList}){
               <Padder />
               {/* create each image */}
               {imageList.map((image, index) => {
-                return( <SlidingImage src={image} alt={"gallery"} key={index}/> );
+                return( <SlidingImage src={image} alt={"gallery"} key={index} onClick={() => showImageInModal(image)} /> );
               })}
               
               <Padder />
@@ -101,5 +108,34 @@ function PictureSlider({imageList}){
     </>
   );
 }
+
+
+
+
+
+
+function ImageForModal({imageSrc}){
+
+  const pictureStyles = {
+    height: '100%',
+    width: '100%',
+    objectFit: 'cover',
+    padding: '0 8px',
+    userSelect: 'none',
+  }
+
+  return(
+    <>
+      {/* <div>asdfasdfasdf</div> */}
+      <img style={pictureStyles} src={imageSrc} alt={"gallery"}/>
+    </>
+  )
+}
+
+
+
+
+
+
 
 export default PictureSlider;

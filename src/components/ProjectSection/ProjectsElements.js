@@ -25,6 +25,7 @@ export const ProjectSectionContainer = styled.div`
     bottom: 0;
     left: 0;
     opacity: 0.05;
+    z-index: -1;
   }
 `
 
