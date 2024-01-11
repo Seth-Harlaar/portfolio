@@ -96,7 +96,7 @@ const ProjectSection = () => {
         </ProjectSectionContainer>
       </ProjectSectionBackground>
     </>
-  )
+  );
 }
 
 

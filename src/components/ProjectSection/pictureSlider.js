@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 
 // components
 import { ImageSlider, ImageSliderContainer, LeftArrow, Padder, RightArrow, SliderContainer, SliderImageContainer, SlidingImage } from "./ProjectsElements";
 
+import {ScreenContext} from '../../providers/screenProvider';
 
 
 function PictureSlider({imageList}){
@@ -69,12 +70,19 @@ function PictureSlider({imageList}){
     left: sliderOffset
   }
 
+  const {isSmallScreen, isLrgScreen, isMegaScreen} = useContext(ScreenContext);
+
+  let height = '400px';
+  if(isSmallScreen || (isLrgScreen && !isMegaScreen)){
+    height = '250px';
+  }
+
   return(
     <>
       <SliderContainer className=" w-full m-auto overflow-hidden">
         <SliderImageContainer className="relative w-10/12 m-auto">
           {/* the image container that slides */}
-          <ImageSliderContainer style={sliderOffsetStyle} >
+          <ImageSliderContainer style={sliderOffsetStyle} height={height} >
             <ImageSlider className="absolute flex w-full">
               <Padder />
               {/* create each image */}

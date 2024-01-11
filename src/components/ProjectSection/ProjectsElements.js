@@ -9,7 +9,7 @@ export const ProjectSectionBackground = styled.div`
 `
   
 export const ProjectSectionContainer = styled.div`
-  padding: 30px;
+  padding: 30px 0;
   background-color: #0e182b;
   
   position: relative;
@@ -154,12 +154,13 @@ export const SliderImageContainer = styled.div`
 // offset
 export const ImageSliderContainer = styled.div`
   position: relative;
-  height: 400px;
+  height: ${props => props.height};
   width: 100%;
   transition-duration: 100ms;
 `
 
 export const ImageSlider = styled.div`
+  height: 100%;
   position: absolute;
   display: flex;
   width: 100%;
@@ -167,7 +168,7 @@ export const ImageSlider = styled.div`
 
 export const SlidingImage = styled.img`
   flex: none;
-  height: 400px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   padding: 0 8px;
@@ -177,7 +178,7 @@ export const SlidingImage = styled.img`
 
 export const Padder = styled.div`
   flex: none;
-  height: 400px;
+  height: 100%;
   width: 100%;
   background-color: #181f30;
   padding: 0 8px;

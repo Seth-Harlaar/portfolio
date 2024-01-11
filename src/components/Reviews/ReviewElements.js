@@ -18,7 +18,7 @@ export const ReviewsContainer = styled.div`
 `
 
 export const ReviewCard = styled.div`
-  min-width: 250px;
+  min-width: 300px;
   flex: 1;
   position: relative;
   padding: 30px;
