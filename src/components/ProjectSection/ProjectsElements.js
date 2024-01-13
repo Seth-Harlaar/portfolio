@@ -39,8 +39,9 @@ export const ProjectSectionTitle = styled.h1`
 export const ProjectTitle = styled.h1`
   color: #E5E5E5;
   font-size: 14px;
-  padding-bottom: 10px;
-  padding-left: 30px;
+  padding-left: 50px;
+  padding-top: 35px;
+  text-transform: uppercase;
 `
 
 export const PictureIconContainer = styled.div`
@@ -102,34 +103,31 @@ export const IconGroup = styled.div`
 
   transition: 150ms;
   &:hover {
-    transform: scale(1.1);
     color: #FCA311;
   }
-
 `
 
 export const IconContainer = styled.div`
   display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  width: 100px;
-
-  padding: 50px 0;
+  gap: 10px;
+  text-align: center;
+  margin-left: 50px;
 `
 
 export const IconDescription = styled.h1`
+  padding-top: 2px;
   font-size: 12px;
 `
 
 
 export const ProjectDescription = styled.p`
-  height: 50px;
   width: 70%;
-  margin-left: 20px;
+  margin-left: 50px;
+  padding: 20px 0;
   text-align: justify;
-  font-size: 13px;
+  font-size: 15px;
   color: #B6B6B6;
 `
 

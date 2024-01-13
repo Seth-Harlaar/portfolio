@@ -59,7 +59,12 @@ export const connectApplianceInfo = {
   'title': 'Website for CONNECT Appliance Inc.',
   'pictures': connectPics,
   'description': 'In this project, I developed a fully custom website for CONNECT Appliance Inc. It allows them to have a greater online presence and facilitates communication from new clients.',
-  'icons': [],
+  'icons': [
+    {'title': 'React.js', 'name': DiReact },
+    {'title': 'HTML5', 'name': AiFillHtml5 },
+    {'title': 'Tailwind CSS', 'name': SiTailwindcss },
+    {'title': 'Node.js', 'name': FaNodeJs },
+  ],
   'link': 'https://connect-appliance-host.github.io/website/'
 }
 

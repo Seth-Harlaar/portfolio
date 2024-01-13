@@ -20,7 +20,7 @@ import projectList from "./projectInfo";
 import PictureSlider from "./pictureSlider";
 
 const IconStyle = {
-  fontSize:'28px',
+  fontSize:'24px', 
 }
 
 const WrapperStyle = {
@@ -84,25 +84,25 @@ const ProjectSection = () => {
 function ProjectShowcase({projectInfo, pictureIndex}){
   return(
     <div style={WrapperStyle}>
-      <PictureIconContainer>
-        <PictureSlider imageList={projectInfo.pictures}/>
-        <IconContainer>
-          {
-            projectInfo.icons.map((icon, index) => {
-              return(
-                <IconGroup key={index}>
-                  <icon.name style={IconStyle}/>
-                  <IconDescription>{icon.title}</IconDescription>
-                </IconGroup>
-              )
-            })
-          }
-        </IconContainer>
-      </PictureIconContainer>
+      <PictureSlider imageList={projectInfo.pictures}/>
 
+      <ProjectTitle>{projectInfo.title}</ProjectTitle>
       <ProjectDescription>
         {projectInfo.description}
       </ProjectDescription>
+      <IconContainer>
+        {
+          projectInfo.icons.map((icon, index) => {
+            return(
+              <IconGroup key={index}>
+                <icon.name style={IconStyle}/>
+                <IconDescription>{icon.title}</IconDescription>
+              </IconGroup>
+            )
+          })
+        }
+      </IconContainer>
+
       <ViewProject href={projectInfo.link}><BiLinkExternal/></ViewProject>
     </div>
   )
