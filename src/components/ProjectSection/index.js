@@ -10,7 +10,7 @@ import {  ProjectSectionContainer, ProjectSectionBackground, ProjectSectionTitle
           PictureContainer, PictureIconContainer, IconContainer, 
           ProjectPicture, ProjectTitle, ProjectDescription, 
           IconDescription, IconGroup, PictureLeft,
-          PictureRight, PictureMenuContainer, ViewProject } from "./ProjectsElements";
+          PictureRight, PictureMenuContainer, ViewProject, NextProjectRight, NextProjectLeft, ProjectMenuItem } from "./ProjectsElements";
 
 // icons
 import { BiLinkExternal } from 'react-icons/bi';
@@ -37,13 +37,6 @@ const ProjectSection = () => {
   const [picIndex, setPicIndex] = useState(0);
   const [projectIndex, setProjectIndex] = useState(0);
 
-  // updates the picture
-  function nextPicture(pictureList){
-    setPicIndex(picIndex + 1);
-    if(picIndex >= pictureList.length - 1){
-      setPicIndex(0);
-    }
-  }
 
   // updates the project
   function rightProject(projectList){
@@ -64,29 +57,22 @@ const ProjectSection = () => {
     }
   }
 
-  useEffect(() => {
-    
-    const interval = setInterval(() => {
-      nextPicture(projectList[projectIndex].pictures);
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [picIndex]);
-
   return(
     <>
       <ProjectSectionBackground>
         <ProjectSectionTitle>Project Showcase</ProjectSectionTitle>
         <ProjectSectionContainer>
-          
+
+          <PictureMenuContainer>
+            <PictureLeft onClick={() => {leftProject(projectList)}}><NextProjectLeft/></PictureLeft>
+            {projectList.map((project, index) => {
+              return ( <ProjectMenuItem key={index} highlight={(index === projectIndex ? "true" : undefined)}>{project.title}</ProjectMenuItem> );
+            })}
+            <PictureRight onClick={() => {rightProject(projectList)}}><NextProjectRight/></PictureRight>
+          </PictureMenuContainer>
           <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/>
 
           
-
-          <PictureMenuContainer>
-            <PictureLeft onClick={() => {leftProject(projectList)}}>{'<'}</PictureLeft>
-            <PictureRight onClick={() => {rightProject(projectList)}}>{'>'}</PictureRight>
-          </PictureMenuContainer>
         </ProjectSectionContainer>
       </ProjectSectionBackground>
     </>
@@ -98,8 +84,6 @@ const ProjectSection = () => {
 function ProjectShowcase({projectInfo, pictureIndex}){
   return(
     <div style={WrapperStyle}>
-      <ProjectTitle>{projectInfo.title}</ProjectTitle>
-      
       <PictureIconContainer>
         <PictureSlider imageList={projectInfo.pictures}/>
         <IconContainer>

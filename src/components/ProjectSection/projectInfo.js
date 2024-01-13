@@ -3,6 +3,10 @@ import browsPicture from '../../assets/images/project_pics/custom_browser/main.p
 import browsPicture2 from '../../assets/images/project_pics/custom_browser/old.png';
 import navPic from '../../assets/images/project_pics/fancy_nav/nav_home.png';
 import navPic2 from '../../assets/images/project_pics/fancy_nav/nav_nav.png';
+import connectPic from '../../assets/images/project_pics/connect_appliance/hero.PNG';
+import connectPic2 from '../../assets/images/project_pics/connect_appliance/port.PNG';
+import connectPic3 from '../../assets/images/project_pics/connect_appliance/brands.PNG';
+
 
 // icons
 import { AiFillHtml5 } from 'react-icons/ai';
@@ -18,6 +22,12 @@ const browsPics = [
 const navPics = [
   navPic,
   navPic2
+];
+
+const connectPics = [
+  connectPic,
+  connectPic2,
+  connectPic3
 ]
 
 export const customHomepageInfo = {
@@ -45,9 +55,18 @@ export const fancyNavInfo = {
   'link': 'https://seth-harlaar.github.io/Fancy-Nav/',
 }
 
+export const connectApplianceInfo = {
+  'title': 'Website for CONNECT Appliance Inc.',
+  'pictures': connectPics,
+  'description': 'In this project, I developed a fully custom website for CONNECT Appliance Inc. It allows them to have a greater online presence and facilitates communication from new clients.',
+  'icons': [],
+  'link': 'https://connect-appliance-host.github.io/website/'
+}
+
 const projectList = [
   customHomepageInfo,
-  fancyNavInfo
+  fancyNavInfo,
+  connectApplianceInfo
 ]
 
 export default projectList;

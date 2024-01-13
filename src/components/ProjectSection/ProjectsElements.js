@@ -1,4 +1,5 @@
 import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
+import { FaArrowLeft, FaArrowRight  } from "react-icons/fa";
 
 import styled from 'styled-components';
 import backgroundImage2 from '../../assets/images/background/background.webp';
@@ -12,7 +13,7 @@ export const ProjectSectionContainer = styled.div`
   padding: 30px 0;
   background-color: #0e182b;
   
-  position: relative;
+  position: relative;n
 
   &:before {
     content: "";
@@ -39,6 +40,7 @@ export const ProjectTitle = styled.h1`
   color: #E5E5E5;
   font-size: 14px;
   padding-bottom: 10px;
+  padding-left: 30px;
 `
 
 export const PictureIconContainer = styled.div`
@@ -60,6 +62,14 @@ export const PictureContainer = styled.div`
 export const PictureMenuContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  padding-bottom: 13px;
+`
+
+export const ProjectMenuItem = styled.div`
+  color: ${props => props.highlight ? "white" : "rgba(255,255,255,0.2)"};
 `
 
 export const PictureLeft = styled.div`
@@ -135,7 +145,15 @@ export const ViewProject = styled.a`
   }
 `
 
+export const NextProjectRight = styled(FaArrowRight)`
+  font-size: 22px;
+  color: white;
+`
 
+export const NextProjectLeft = styled(FaArrowLeft)`
+  font-size: 22px;
+  color: white;
+`
 
 
 
