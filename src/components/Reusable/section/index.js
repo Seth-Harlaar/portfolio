@@ -10,7 +10,7 @@ import { ProjectSectionBackground } from "./SectionElement";
 function Section({title, children}){
   return (
     <>
-      <ProjectSectionBackground>
+      <ProjectSectionBackground data-aos="fade-right">
         <h1>{title}</h1>
         <div>
           {children}

@@ -3,7 +3,10 @@ import styled from 'styled-components';
 export const PapersContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
   width: 100%;
+  padding: 0 20px;
 `
 
 export const DocTileContainer = styled.div`
@@ -13,7 +16,6 @@ export const DocTileContainer = styled.div`
   width: 250px;
   height: 300px;
   background-color: #181f30;
-
   border-radius: 5px;
   padding: 20px;
   font-size: 12px;
