@@ -1,70 +1,62 @@
 import styled from 'styled-components'
 
 export const SkillsTitle = styled.h1`
-  font-size: 140px;
+  margin-left: 30px;
+  padding-bottom: 13px;
+  font-size: 20px;
   font-weight: normal;
-  padding-left: 200px;
-  color: var(--barely-visible);
+  color: #E5E5E5;
+`
+
+export const SkillSectionContainer = styled.div`
+  margin: 0px 30px 30px 30px;
+  // padding: 30px;
+`
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 `
 
 export const SkillContainer = styled.div`
-`
-
-export const SkillsColumnContainer = styled.div`
+  min-width: 245px;
+  max-width: ${props => props.megascreen ? "530px" : undefined};
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 0px 100px 50px 100px;
-  background: var(--primary);
-`
-
-export const SkillColumn = styled.div`
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 30px;
-
-  height: 60vh;
-  // width: 400px;
-  background: var(--primary);
-  color: var(--highlight);
-`
-
-export const SkillCard = styled.div`
-  background: #1C1F22;
-  flex-grow: 1;
-  flex-grow: ${({ small }) => (small ? 3 : 7)}
-`
-
-export const SkillCardTitleContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-export const SkillCardPrev = styled.div`
-  padding: 10px;
-`
-
-export const SkillCardFull = styled.div`
-  padding: 10px;
+  gap: 15px;
   color: white;
-  font-size: 20px;
+  background: #0e182b;
+  padding: 25px;
 `
 
-
-
-export const SkillCardImg = styled.div`
-  height: 100px;
-  width: 100px;
-
-  background: pink;
+export const SKillTitle = styled.h1`
+  font-size: 13px;
+  padding-bottom: 8px;
 `
 
-export const SkillCardTitle = styled.h1`
-  flex-grow: 1;
-  text-align: center;
-  font-weight: normal;
-  font-size: 30px;
+export const SkillDescription = styled.h1`
+  font-style: italic;
+  font-size: 12px;
+  padding-bottom: 8px;
+  color: #B6B6B6;
+`
+
+export const SkillList = styled.ul`
+  list-style-position: inside;
+  list-style: none;
+`
+
+export const ListItem = styled.li`
+  color: #B6B6B6;
+  font-size: 12px;
+
+  &:before {
+    content: "• ";
+    color: #FCA311;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+  }
 `

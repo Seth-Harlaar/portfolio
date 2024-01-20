@@ -2,11 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {ScreenProvider} from './providers/screenProvider';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from 'styled-components';
+import { goodTheme } from './pages/theme';
+import { ModalProvider } from './providers/modalProvider';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ScreenProvider>
+      <ThemeProvider theme={goodTheme}>
+        <ModalProvider>
+          <App />
+        </ModalProvider>
+      </ThemeProvider>
+    </ScreenProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

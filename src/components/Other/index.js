@@ -1,66 +1,63 @@
 import React from 'react';
 
-import {
-  OtherContainer,
-  OtherTitle,
-  OtherTile,
-  OtherTileContainer,
-  OtherTilePreviewContainer,
-  OtherDescription,
-  OtherPicture
-} from './OtherElements'
-
-import inversePreview from '../../images/inverse_quad_preview.jpg'
+import { DocTileContainer, PapersContainer, StatContainer } from './OtherElements'
+import otherContent from "../../assets/content/otherContent";
+import Section from '../Reusable/section';
 
 
-const OtherSection = () => {
+// 
+const DocTile = ({paper}) => {
+
   return (
     <>
+      <DocTileContainer>
+        <h1>{paper.title}</h1>
+        <div>
+          Topics: 
+          {paper.topics.map((topic, index) => {
+            return ( <h1 key={index}>{topic}</h1> )
+          })}
+        </div>
+        <p>{paper.desc}</p>
 
-    {/* add a breaker section between this section and the one above */}
-      <OtherContainer id={'other'}>
-        <OtherTitle>other work</OtherTitle>
-
-        <OtherTileContainer>
-          <OtherTile>
-            <OtherTilePreviewContainer>
-              <OtherPicture src={inversePreview}></OtherPicture>
-            </OtherTilePreviewContainer>
-
-            <OtherDescription>
-              asdfasdfasdf
-            </OtherDescription>
-
-          </OtherTile>
-
-          <OtherTile>
-            <OtherTilePreviewContainer>
-              <OtherPicture src={inversePreview}></OtherPicture>
-            </OtherTilePreviewContainer>
-
-            <OtherDescription>
-              asdfasdfasdf
-            </OtherDescription>
-
-          </OtherTile>
-
-          <OtherTile>
-            <OtherTilePreviewContainer>
-              <OtherPicture src={inversePreview}></OtherPicture>
-            </OtherTilePreviewContainer>
-
-            <OtherDescription>
-              asdfasdfasdf
-            </OtherDescription>
-
-          </OtherTile>
-          
-
-        </OtherTileContainer>
-
-      </OtherContainer>
+        {/* stats */}
+        <div>
+          <StatContainer>
+            <div>
+              <div>
+                870
+              </div>
+              <div>
+                words
+              </div>
+            </div>
+          </StatContainer>
+          <div>read</div>
+        </div>
+      </DocTileContainer>
     </>
   )
 }
 
-export default OtherSection
+
+const OtherSection = () => {
+
+  return (
+    <>
+      <Section title={'Other Work'}>
+        <PapersContainer>
+          {otherContent.map((project, index) => {
+            return (
+              <>
+                <DocTile paper={project} key={index}></DocTile>
+              </>
+            )
+          })}
+
+        </PapersContainer>
+      </Section>
+    </>
+  )
+}
+
+export default OtherSection;

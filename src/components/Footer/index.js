@@ -12,7 +12,6 @@ import {
   SocialMedia,
   SocialMediaWrap,
   SocialLogo,
-  WebsiteRights,
   SocialIcons,
   SocialIconLink
 } from './FooterElements'
@@ -74,11 +73,9 @@ const Footer = () => {
             <SocialMediaWrap>
 
               <SocialLogo to="/" onClick={toggleHome}>
-                FDIA
+                SETH H
               </SocialLogo>
 
-              <WebsiteRights>FDIA C {new Date().getFullYear()} All rights reserved.</WebsiteRights>
-              
               <SocialIcons>
                 <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                   <FaFacebook />

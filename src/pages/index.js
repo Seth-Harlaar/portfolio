@@ -1,32 +1,51 @@
-import React, {useState} from 'react';
-
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/Navbar'
+import React, {useContext} from 'react';
+import Skills from '../components/Skills';
 import HeroSection from '../components/HeroSection';
+import ProjectSection from '../components/ProjectSection';
+import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
-import ExperienceSection from '../components/Experience'
-import OtherSection from '../components/Other'
-import SkillsSection from '../components/Skills';
+import ContactSection from '../components/Contact';
+import SidebarWrapper from '../components/Sidebar';
+import OtherSection from '../components/Other';
+import { ScreenContext } from '../providers/screenProvider';
 
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const {isLrgScreen, isMegaScreen} = useContext(ScreenContext);
 
-  const toggle = () => {
-    setIsOpen(!isOpen)
+  const splitterStyles = {
+    display: "flex",
+    height:"100%",
+    width:"100%",
+    overflowY:"hidden",
+    padding: isMegaScreen ?  "30px 70px" : "",
+    tranistionDuration: "200ms"
   }
+
+  const mainStyles = {
+    width: isLrgScreen ? 'calc(100% - 300px)' : '100%',
+    overflowY:'auto', 
+    height:'100%', 
+    paddingLeft:'0px'
+  }
+  
 
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle}/>
-      <Navbar toggle={toggle}/>
-      <HeroSection />
-      <ExperienceSection />
-      <OtherSection/>
-      <SkillsSection/>
-      <Footer />
+      <div style={splitterStyles}>
+        <SidebarWrapper/>
+        <div style={mainStyles}>
+          <HeroSection />
+          <Skills/>
+          <ProjectSection/>
+          <OtherSection/>
+          <Reviews/>
+          <ContactSection/>
+          <Footer/>
+        </div>
+      </div>
     </>
   )
 }
 
-export default Home
+export default Home;
