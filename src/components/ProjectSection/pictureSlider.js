@@ -7,7 +7,7 @@ import {ScreenContext} from '../../providers/screenProvider';
 import { ModalContext } from "../../providers/modalProvider";
 
 
-function PictureSlider({imageList}){
+function PictureSlider({imageList, projectIndex}){
   const imageListLength = imageList.length;
 
   // states
@@ -17,6 +17,16 @@ function PictureSlider({imageList}){
   const [canMoveRight, setCanMoveRight] = useState(true);
   const [canMoveLeft, setCanMoveLeft] = useState(false);
 
+  // when project changes, reset index
+  useEffect(() => {
+    setOffset(-100);
+    setIndex(0);
+    setCanMoveLeft(false);
+    
+    if(imageListLength > 1){
+      setCanMoveRight(true);
+    }
+  }, [projectIndex]);
 
   // when index changes, update moveability
   useEffect(() => {

@@ -10,7 +10,7 @@ import {  ProjectSectionContainer, ProjectSectionBackground, ProjectSectionTitle
           PictureContainer, PictureIconContainer, IconContainer, 
           ProjectPicture, ProjectTitle, ProjectDescription, 
           IconDescription, IconGroup, PictureLeft,
-          PictureRight, PictureMenuContainer, ViewProject, NextProjectRight, NextProjectLeft, ProjectMenuItem } from "./ProjectsElements";
+          PictureRight, PictureMenuContainer, ViewProject, NextProjectRight, NextProjectLeft, ProjectMenuItem, SkillsLearned } from "./ProjectsElements";
 
 // icons
 import { BiLinkExternal } from 'react-icons/bi';
@@ -66,11 +66,11 @@ const ProjectSection = () => {
           <PictureMenuContainer>
             <PictureLeft onClick={() => {leftProject(projectList)}}><NextProjectLeft/></PictureLeft>
             {projectList.map((project, index) => {
-              return ( <ProjectMenuItem key={index} highlight={(index === projectIndex ? "true" : undefined)}>{project.title}</ProjectMenuItem> );
+              return ( <ProjectMenuItem key={index} highlight={(index === projectIndex ? "true" : undefined)}>{project.shortTitle}</ProjectMenuItem> );
             })}
             <PictureRight onClick={() => {rightProject(projectList)}}><NextProjectRight/></PictureRight>
           </PictureMenuContainer>
-          <ProjectShowcase projectInfo={projectList[projectIndex]} pictureIndex={picIndex}/>
+          <ProjectShowcase projectInfo={projectList[projectIndex]} projectIndex={projectIndex}/>
 
           
         </ProjectSectionContainer>
@@ -81,15 +81,25 @@ const ProjectSection = () => {
 
 
 // project showcase template
-function ProjectShowcase({projectInfo, pictureIndex}){
+function ProjectShowcase({projectInfo, projectIndex}){
   return(
     <div style={WrapperStyle}>
-      <PictureSlider imageList={projectInfo.pictures}/>
+      <PictureSlider imageList={projectInfo.pictures} projectIndex={projectIndex}/>
 
       <ProjectTitle>{projectInfo.title}</ProjectTitle>
       <ProjectDescription>
         {projectInfo.description}
       </ProjectDescription>
+      <SkillsLearned>
+        {projectInfo.skills.map((skill, index) => {
+          return (
+            <>
+              { (index !== 0)  ? <div>-</div> : null}
+              <div key={index}>{skill}</div>
+            </>
+          );
+        })}
+      </SkillsLearned>
       <IconContainer>
         {
           projectInfo.icons.map((icon, index) => {
@@ -103,9 +113,9 @@ function ProjectShowcase({projectInfo, pictureIndex}){
         }
       </IconContainer>
 
-      <ViewProject href={projectInfo.link}><BiLinkExternal/></ViewProject>
+      <ViewProject href={projectInfo.link}>View Online <BiLinkExternal/></ViewProject>
     </div>
-  )
+  );
 }
 
 

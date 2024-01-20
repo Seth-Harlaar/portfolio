@@ -1,137 +1,89 @@
 import styled from 'styled-components';
 
-export const OtherContainer = styled.div`
-  background: ${props => props.theme.background};
-  padding: 0 50px 0 50px;
-  height: 90vh;
-`
-
-
-
-export const OtherTitle = styled.h1`
-  font-size: 140px;
-  font-weight: normal;
-  color: ${props => props.theme.moreVis};
-`
-
-
-
-export const OtherTileContainer = styled.div`
+export const PapersContainer = styled.div`
   display: flex;
   justify-content: space-around;
+  width: 100%;
 `
 
-export const OtherTile = styled.div`
-  width: 30%;  
-`
+export const DocTileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 300px;
+  background-color: #181f30;
 
-export const OtherTilePreviewContainer = styled.div`
-  --wid: 5px;
-  
-  &:before {
-    content:"";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 9;
-
-    width: var(--wid);
-    height: 25%;
-    background:linear-gradient(${props => props.theme.highlight} 50%, ${props => props.theme.highlight} 50%);
-  }
-  
-  position: relative;
-
-  height: 52vh;
-  width: 40vh;
-  margin: 0 auto 10px auto;
-  overflow: hidden;
-  scale: 1;
-  
-  background: white;
-  border-bottom: var(--wid) solid ${props => props.theme.highlight};
-
-  transition: 0.2s;
-  transition-timing-function: ease-out;
-  
-  &:hover {
-    cursor: pointer;
-    scale: 1.07;
-  }
-
-  &:after {
-    content:"";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 9;
-
-    width: var(--wid);
-    height: 50%;
-    background:linear-gradient(${props => props.theme.highlight} 50%, ${props => props.theme.highlight} 50%);
-  }
-`
-
-
-export const OtherDescription = styled.h1`
-  width: 100%;  
-  font-size: 25px;
-  font-weight: normal;
-  text-align: justify;
-  text-justify: inter-word;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 12px;
   color: ${props => props.theme.light};
 
+  // title
+  > h1  {
+    font-weight: 300;
+  }
 
-`
+  > div {
 
-export const OtherPicture = styled.img`
-  width: 100%;
-  object position: 50% top;
-  object-fit: cover;
-  margin: auto;
+    // topic listing
+    &:nth-child(2) {
+      font-size: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      color: ${props => props.theme.moreFadedText};
 
-  &:hover {
-    &:after {
-      content: "hello there";
+      > h1 {
+        color: ${props => props.theme.fadedText};
+        font-size: 15px;
+        font-weight: 300;
+      }
+    }
+
+
+    // buttons
+    &:nth-child(4) {
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      gap: 15px;
+
+      > div {
+        &:nth-child(1) {
+
+        }
+
+        &:nth-child(2) {
+          text-align: center;
+          border-radius: 4px;
+          background-color: ${props => props.theme.highlight};
+          padding: 10px;
+          width: 35%;
+        }
+      }
     }
   }
 `
 
+export const StatContainer = styled.div`
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
 
 
-export const OtherFileModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  displaY: ${props => (props.hidden ? 'none' : 'flex')};
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  color: white;
-  background: ${props => props.theme.superVis};
-`
+  > div {
 
-export const ExitButton = styled.div`
-  position: fixed;
-  top: 5vh;
-  left: 95vw;
-  font-size: 60px;
-  font-weight: bold;
+    > div {
 
-  &:hover {
-    cursor: pointer;
+      &:nth-child(1) {
+        color: ${props => props.theme.fadedText};
+      }
+
+      &:nth-child(2) {
+        color: ${props => props.theme.moreFadedText};
+      }
+
+    }
   }
-`
-
-export const OtherFileView = styled.div`
-  height: 90vh;
-  width: 50vw;
-  background: white;
-`
-
-export const OtherFileEmbed = styled.embed`
-  width: 100%;
-  height: 100%;
 `

@@ -6,6 +6,7 @@ import Reviews from '../components/Reviews';
 import Footer from '../components/Footer';
 import ContactSection from '../components/Contact';
 import SidebarWrapper from '../components/Sidebar';
+import OtherSection from '../components/Other';
 import { ScreenContext } from '../providers/screenProvider';
 
 
@@ -37,6 +38,7 @@ const Home = () => {
           <HeroSection />
           <Skills/>
           <ProjectSection/>
+          <OtherSection/>
           <Reviews/>
           <ContactSection/>
           <Footer/>

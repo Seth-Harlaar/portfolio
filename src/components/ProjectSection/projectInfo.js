@@ -31,9 +31,11 @@ const connectPics = [
 ]
 
 export const customHomepageInfo = {
+  'shortTitle': 'Custom Homepage',
   'title': 'Custom Browser Homepage',
   'pictures': browsPics,
   'description': 'This project was built using React.js, Tailwind CSS, Node.js, and JavaScript. It features a clock with the time and date, local weather data, custom bookmarks, and a search bar with multiple search engine options.',
+  'skills': ['Weather API', 'Date objects'],
   'icons': [
     {'title': 'React.js', 'name': DiReact },
     {'title': 'HTML5', 'name': AiFillHtml5 },
@@ -44,9 +46,11 @@ export const customHomepageInfo = {
 }
 
 export const fancyNavInfo = {
+  'shortTitle': 'Nav App',
   'title': 'Fancy Navigation App',
   'pictures': navPics,
   'description': 'This was a small project I setup to practice using Tailwind CSS to style websites. I found an interesting navigation menu I liked and decided to replicate it.',
+  'skills': ['Animation'],
   'icons': [
     {'title': 'React.js', 'name': DiReact },
     {'title': 'HTML5', 'name': AiFillHtml5 },
@@ -56,9 +60,11 @@ export const fancyNavInfo = {
 }
 
 export const connectApplianceInfo = {
+  'shortTitle': 'Connect Appliance',
   'title': 'Website for CONNECT Appliance Inc.',
   'pictures': connectPics,
   'description': 'In this project, I developed a fully custom website for CONNECT Appliance Inc. It allows them to have a greater online presence and facilitates communication from new clients.',
+  'skills': ['React-router', 'Image slider animations', 'EmailJS API', 'Custom Provider Components'],
   'icons': [
     {'title': 'React.js', 'name': DiReact },
     {'title': 'HTML5', 'name': AiFillHtml5 },

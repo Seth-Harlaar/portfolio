@@ -13,7 +13,7 @@ export const ProjectSectionContainer = styled.div`
   padding: 30px 0;
   background-color: #0e182b;
   
-  position: relative;n
+  position: relative;
 
   &:before {
     content: "";
@@ -71,6 +71,7 @@ export const PictureMenuContainer = styled.div`
 
 export const ProjectMenuItem = styled.div`
   color: ${props => props.highlight ? "white" : "rgba(255,255,255,0.2)"};
+  text-transform: uppercase;
 `
 
 export const PictureLeft = styled.div`
@@ -131,8 +132,20 @@ export const ProjectDescription = styled.p`
   color: #B6B6B6;
 `
 
+export const SkillsLearned = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  color: rgb(255,255,255,0.5);
+  padding-bottom: 20px;
+  margin-left: 50px;
+  font-size: 12px; 
+
+`
+
 
 export const ViewProject = styled.a`
+  text-decoration: none;
   position: absolute;
   bottom: 10px;
   right: 10px;
